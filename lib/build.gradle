@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.immutables:value:2.8.8'
+    implementation 'io.vavr:vavr:0.10.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes("Implementation-Title": project.name,
+                "Implementation-Version": version)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
