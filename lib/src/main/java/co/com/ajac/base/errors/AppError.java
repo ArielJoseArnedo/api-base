@@ -1,4 +1,4 @@
-package co.com.ajac.domain.errors;
+package co.com.ajac.base.errors;
 
 public interface AppError {
     String code();

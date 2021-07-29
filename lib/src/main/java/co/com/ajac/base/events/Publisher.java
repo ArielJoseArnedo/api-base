@@ -1,4 +1,4 @@
-package co.com.ajac.domain.events;
+package co.com.ajac.base.events;
 
 import io.vavr.collection.List;
 
