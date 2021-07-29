@@ -1,4 +1,4 @@
-package co.com.ajac.domain.inmutables.styles;
+package co.com.ajac.base.inmutables.styles;
 
 import org.immutables.value.Value;
 
