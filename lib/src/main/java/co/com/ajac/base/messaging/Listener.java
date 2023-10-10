@@ -8,5 +8,7 @@ import io.vavr.concurrent.Future;
 
 public interface Listener {
     String getName();
-    Future<List<Event>> onMessage(Message message, Header header);
+    default Future<List<Event>> onMessage(Message message, Header header) {
+        return Future.successful(List.empty());
+    }
 }
