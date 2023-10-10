@@ -10,9 +10,16 @@ repositories {
     mavenCentral()
 }
 
+def jacksonVersion = '2.15.0'
+
 dependencies {
-    implementation 'org.immutables:value:2.8.8'
-    implementation 'io.vavr:vavr:0.10.3'
+    api 'org.immutables:value:2.8.8'
+    api 'io.vavr:vavr:0.10.3'
+    api "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    api "com.fasterxml.jackson.module:jackson-module-parameter-names:$jacksonVersion"
+    api "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
+    api "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jacksonVersion"
+    implementation 'io.vavr:vavr-jackson:0.10.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
