@@ -1,6 +1,6 @@
 plugins {
-    id 'java'
     id 'java-library'
+    id 'maven-publish'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -26,13 +26,16 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
-tasks.named('jar') {
-    manifest {
-        attributes("Implementation-Title": project.name,
-                "Implementation-Version": version)
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            artifactId = rootProject.name
+            version = version
+            from components.java
+        }
     }
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
 }
