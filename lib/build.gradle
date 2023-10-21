@@ -36,6 +36,13 @@ publishing {
     }
 }
 
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
+
 test {
     useJUnitPlatform()
 }
