@@ -39,7 +39,7 @@ publishing {
 
 tasks.named('jar') {
     manifest {
-        attributes("Implementation-Title": project.name,
+        attributes("Implementation-Title": rootProject.name,
                 "Implementation-Version": version)
     }
 }
