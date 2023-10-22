@@ -1,12 +1,10 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
 
 version = '2.0.0'
-group = 'co.com.ajac'
 
 repositories {
     mavenCentral()
@@ -24,6 +22,14 @@ dependencies {
     implementation 'io.vavr:vavr-jackson:0.10.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+
+tasks.named('jar') {
+    manifest {
+        attributes("Implementation-Title": project.name,
+                "Implementation-Version": version)
+    }
 }
 
 tasks.named('test') {
