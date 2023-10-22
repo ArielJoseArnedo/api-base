@@ -29,6 +29,7 @@ dependencies {
 publishing {
     publications {
         myLibrary(MavenPublication) {
+            groupId = "com.github.ArielJoseArnedo"
             artifactId = rootProject.name
             version = version
             from components.java
@@ -38,6 +39,7 @@ publishing {
 
 tasks.named('jar') {
     manifest {
+        archivesBaseName = rootProject.name
         attributes('Implementation-Title': rootProject.name,
                 'Implementation-Version': project.version)
     }
