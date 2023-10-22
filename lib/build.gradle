@@ -26,24 +26,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
-publishing {
-    publications {
-        myLibrary(MavenPublication) {
-            groupId = "com.github.ArielJoseArnedo"
-            artifactId = rootProject.name
-            version = version
-            from components.java
-        }
-    }
-}
-
-tasks.named('jar') {
-    manifest {
-        attributes("Implementation-Title": rootProject.name,
-                "Implementation-Version": version)
-    }
-}
-
 tasks.named('test') {
     useJUnitPlatform()
 }
