@@ -43,6 +43,6 @@ tasks.named('jar') {
     }
 }
 
-test {
+tasks.named('test') {
     useJUnitPlatform()
 }
