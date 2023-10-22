@@ -30,7 +30,7 @@ publishing {
     publications {
         myLibrary(MavenPublication) {
             groupId = "com.github.ArielJoseArnedo"
-            artifactId = project.name
+            artifactId = rootProject.name
             version = version
             from components.java
         }
